@@ -1,0 +1,171 @@
+
+CSDN账号：906181262@qq.com      Cl460557127@
+
+git branch //查看=当前分支
+git checkout 分支名//切换分支
+
+服务器切换账号，解决没有权限的问题----控制面板\所有控制面板项\凭据管理器
+
+
+adb logcat> d:\\logcat.txt  //adb log创建
+C:\Users\LENOVO>adb logcat -v time > d:\\logcat.txt -------加上时间
+adb pull /sdcard/txz/log d:\txzlog -------pull文件到电脑
+adb截屏 adb shell screencap -p /sdcard/screen.png
+
+
+./selfbuild clean
+./selfbuild
+
+
+
+//编译指定部分文件
+先执行 source ./selfenv
+再执行 mmm yecon/packages/apps/appname      //路径文件夹名称可能有所差异
+
+./selfbuild makeimage
+
+//编译成功生成目录
+Z:\ac8227-20170629-ky_dsp\out\target\product\ac8317\obj\lib\libHDX6.so   .so包
+Z:\ac8227-20170629-ky_dsp\out\target\product\ac8317\system\app\DSPSetting.apk     apk文件
+
+
+
+
+//git提交步骤
+perl git-ac8227-ky.pl//下载git内容---------一般不需要
+首先进入项目的目录如:yangcuiyuan/ac8227-20170626-ky$
+git pull //拉去服务器内容，同步
+git branch //查看确认内容
+git add yecon/packages/apps/YG_VideoPlayer //添加内容
+git commit -m "姓名：提交日志"
+git push //上传到服务器
+
+
+//删除文件夹步骤
+git rm -rf  文件夹目录（git rm 文件夹名）
+git commit -m "姓名： 提交日志"
+git push
+
+
+
+3.暂存需要提交的文件
+
+如果是新建的文件
+
+则git add  <file>
+
+如果是修改的文件则git add  <file>如果是删除的文件则 git rm  <file>
+
+4.提交已暂存的文件
+
+git commit
+
+注意注释填写规范。
+
+git commit --amend
+
+修改最近一次提交。有时候如果提交注释书写有误或者漏提文件，可以使用此命令。
+
+5.     同步到服务器
+
+同步到服务器前先需要将服务器代码同步到本地
+
+命令： git pull
+
+如果执行失败，就按照提示还原有冲突的文件，然后再次尝试同步。
+
+命令：git checkout -- <有冲突的文件路径>
+
+同步到服务器
+
+命令： git push origin  <本地分支名>
+
+如果执行失败，一般是没有将服务器代码同步到本地导致的，先执行上面的git pull命令。
+
+
+
+
+//git提交数据
+git pull   更新
+
+git add 路径
+git commit -m "注释"
+git push
+
+
+//删除系统app
+adb启动程序步骤：
+adb root
+adb remount
+adb shell
+cd system/app
+rm -rf BTSuite2
+reboot
+adb root
+adb remount
+
+
+push命令(直接进入cmd就可执行)
+adb push F:\ycy_workspace\DspSetting\libs\armeabi\libDspInterface.so system/lib  //推包进系统
+adb push F:\ycy_workspace\DspSetting\libs\armeabi\libDspInterface.so system/app  //推app进系统
+
+
+
+
+//git合并两个分支
+git fetch  -------------------------------------抓取远程仓库更新
+git merge origin/分支名-------------------------将远程主分支合并到本地当前分支
+然后 git push 你的分支名------------------------将本地主分支推到远程主分支
+
+eclipse输出日志：tag:runt|logcat
+
+
+8.
+git status yecon----查看未提交及修改
+先git pull拉去新的
+git合并分支
+git fetch
+git merge origin +要合并的分支名(git merge origin/ac8317_151425_public2)
+git push origin +你现在的分支名(git push origin kaiyue_a1_dsp)
+
+git checkout origin/ac8317_151425_public2 yecon/packages/apps/TXZCore/TXZCore.apk-----用远程文件
+git add+文件路径用本地修改
+
+
+合并前，要先上传你目前的所有  vi+文件名，进入冲突文件
+有冲突的，打开文件 查找   >>>>
+head 表示你之前的， =============后面的是他改动的，
+然后改好后git add 这个文件， 最后再git commit -m "说明"   git push
+
+
+9.git新建分支
+git branch cheluchang_master
+git checkout cheluchang_master
+git push origin cheluchang_master:cheluchang_master
+
+使用大写的D 强制删除本地分支  git branch -D XXX
+
+
+
+10.资源文件语言转换步骤：
+ ./collect_yeconstrings.sh  -c ../yecon/packages/apps/ -f zh-rCN //搜寻../yecon/packages/apps/ 下带zh-rCN文件
+ ./translate.sh -r output/BackCar/ -f zh-rCN -t ko,th    //根据zh-rCN里的内容生成ko(韩文)，th（泰文）在BackCar目录下
+
+
+./selfbuild_w.sh makeimage
+
+11.git查询某个字符 git grep -n MCU_CANBUS_INFO_TYPE
+
+12.getprop persist.sys.mcu_parking  获取系统属性值
+
+13.find . -name "*"  | xargs grep -in  "/dev/ttyMT5" 搜索字符
+
+14.mkdir+文件名 新建文件  touch +  akk.pl（文件名 ）新建文本，例如txt，pl
+
+15.脚本拷贝升级文件到svn
+   1.修改配置文件.release和make-udisk.py（cp ../.release . cp ../make-udisk.py  .ll cp ../make-udisk.py ./make-udisk.py -h）
+   2../make-udisk.py -c 拷贝并修改image_release文件夹的文件到udisk_release，名字可以指定
+   3.查看mcu升级文件有不有更新，有则改之（只需修改upgradeconfig.xml文件中的mcu版本）
+   4../make-udisk.py -r 上传到svn
+   
+16.修改服务器上传名字git config user.name yangcuiyuan，查看名字git config --list

@@ -1,0 +1,18 @@
+adb shell pm list packages 查看当前所有apk
+
+https://blog.csdn.net/youzi749/article/details/79525528
+android 开发中Adb命令的使用查看所有的Apk包
+------------------------------------------------------------- 	----
+adb root
+和adb remount
+
+------------------------------------------------------------- 	----
+
+在secureCRT中 
+命令:rm -Rf 文件1
+//在当前文件1父路径下删除文件1
+-------------------------------------------------------------	----
+java中的布尔类型操作
+boolean1 &= boolean2 等同于 boolean1 =  boolean1 && boolean2
+boolean1 |= boolean2 等同于 boolean1 =  boolean1 || boolean2
+这和+=，-=有一些类似；类似的布尔操作类型还有^=(a^=b;相同为真，不同为假)

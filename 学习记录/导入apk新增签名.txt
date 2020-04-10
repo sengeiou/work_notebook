@@ -1,0 +1,44 @@
+//在build.gradle中添加
+signingConfigs {
+        release{
+            Properties properties =  new Properties()
+            properties.load(project.rootProject.file('local.properties').newDataInputStream())
+            def sdkDir = properties.getProperty('signing.debug.key')
+            def pasOne = properties.getProperty('passwordOne')
+            def keyName = properties.getProperty('keyName')
+            def pasTwo = properties.getProperty('passwordTwo')
+            storeFile file(sdkDir)
+            storePassword pasOne
+            keyAlias keyName
+            keyPassword pasTwo
+        }
+        debug{
+            storeFile file('D:\\as_project_package\\company_work\\file\\debug.keystore');
+            storePassword 'android'
+        }
+    }
+
+
+       debug {
+            signingConfig signingConfigs.release
+        }
+
+
+dependencies{
+        implementation 'com.android.support:support-v4:28.0.0'
+        compileOnly fileTree(dir: 'D:\\as_project_package\\sdklibs',includes: ['*.aar','*.jar'],excludes: [])
+    }
+
+
+//在local.properties中添加
+signing.debug.key=D\:\\as_project_package\\company_work\\file\\debug.keystore
+passwordOne=android
+keyName=androiddebugkey
+passwordTwo=android
+
+//在project的build.gradle（allproects里！！！切记！！！）添加framework_classes.jar路径
+gradle.projectsEvaluated {
+        tasks.withType(JavaCompile){
+            options.compilerArgs << '-Xbootclasspath/p:D:\\as_project_package\\sdklibs\\framework_classes.jar'
+        }
+    }
