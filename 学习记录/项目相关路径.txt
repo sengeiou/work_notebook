@@ -1,0 +1,31 @@
+at8317\yecon\prebuilt\caroceanAPK 		此为项目加载apk的存放路径
+at8317\yecon\packages\apps			此为项目源码路径
+at8317\autochips\tools\AndroidUpdateTool	此为项目制卡工具路径
+at8317\out\target\product\ac8317\system\app 	此为项目系统apk存放路径
+
+			sn  		vin 	
+wey：		
+northstar：	QBNSYCACNO204000003    LGWHU888888114003      苏贵星
+
+svn://172.18.1.17/android/release/DOC/WorkReport/engineer		svn周报路径
+svn://172.18.1.17/android/release				此为svn路径
+A：shuguixing  P： 888999					此为svn账号密码
+shuguixing = sgx11						此为服务器账号
+
+git 服务器及其账号密码
+\\172.18.1.20				android12	yecon190
+\\172.18.1.15				android02	yecon190
+
+账号：suguixing@car-ocean.com		密码：sgx19970809			仙豆git服务器账号
+
+http://172.18.1.16/cgi-bin/gitweb.cgi?p=yecon/at8317.git;a=summary			git15服务器address
+https://ocean8.5upm.com/user-login-L215Lmh0bWw=.html 				禅道
+account ：suguixing pwd：sgx123456
+http://gitlab.car-ocean.com:8888/zentao/user-login-L3plbnRhby9teS1idWcuaHRtbA==.html	内部禅道
+account ：suguixing pwd：sgx19970809
+
+https://alm.changan.com.cn/login.html						长安禅道
+account（郑部）：WX201907080  pwd：123456
+
+https://jira.btpoc.com/secure/Dashboard.jspa?selectPageId=10501			仙豆禅道
+account： Ckex@123！ pwd： chenlin01
