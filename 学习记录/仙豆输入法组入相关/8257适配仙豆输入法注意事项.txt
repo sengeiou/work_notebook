@@ -3,9 +3,9 @@
 1.修改config下的mk文件（在ac8257-project\config下，作用是copy 对应apk）
 2.修改default.xml （在ac8257-carocean\overlay\vendor\mediatek\proprietary\packages\apps\SettingsProvider\res\values下），配置首选输入法
 3.在\ac8257-carocean\thirdPartyApks下新增同app名称文件夹，加入apk和lib（分为arm和arm64）
-4.ac8257-apps/CKXSystemSettings/src/main/java/com/ckx/system/settings/CarPermission.java 有需要的话，
-要在setting中自动配置权限。
-
+4.ac8257-apps/CKXSystemSettings/src/main/java/com/ckx/system/settings/CarPermission.java 有需要的话，要在setting中自动配置权限。
+5.在ac8257-project\ac8257-carocean\overlay\build\make\tools目录下更新系统属性用于设置输入法ui大小，以及配置
+ro.beantechs.appcfg_path属性，值为appcfg的路径（northstar当前为/mnt/appcfg）
 服务器指定签名文件：
 1.拷贝要签名的APK到androidP目录下
 
@@ -31,3 +31,6 @@ java -Djava.library.path=out/host/linux-x86/lib64 -jar signapk.jar platform.x509
 
 为什么要copy到androidP目录下，回为要用到anroidP下的out目录下的内容：
 out/host/linux-x86/lib64
+
+注意事项：
+	1.机器如果注册过下次升级不要再升crypto这个文件了,否在vin和sn永远失效

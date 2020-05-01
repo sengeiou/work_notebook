@@ -3,9 +3,13 @@ at8317\yecon\packages\apps			此为项目源码路径
 at8317\autochips\tools\AndroidUpdateTool	此为项目制卡工具路径
 at8317\out\target\product\ac8317\system\app 	此为项目系统apk存放路径
 
+https://github.com/   			远程日志保存仓库
+name：		xingcheng11111
+account：		suguixing@car-ocean.com
+pwd：		sgx19970809
 			sn  		vin 	
 wey：		
-northstar：	QBNSYCACNO204000003    LGWHU888888114003      苏贵星
+northstar：	QBNSYCACNO2004000003    LGWHU888888114003  苏贵星
 
 svn://172.18.1.17/android/release/DOC/WorkReport/engineer		svn周报路径
 svn://172.18.1.17/android/release				此为svn路径
