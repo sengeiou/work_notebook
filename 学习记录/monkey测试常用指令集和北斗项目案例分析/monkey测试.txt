@@ -1,0 +1,27 @@
+monkey  --ignore-crashes  --ignore-timeouts --ignore-security-exceptions  --pct-trackball 0 --pct-nav 0 --pct-majornav 0 --pct-anyevent 0  --pct-syskeys 0 -v -v -v --throttle 500 1200000000 > /mnt/sdcard/monkeysys.txt 2>&1 &
+
+monkey测试命令：
+adb shell monkey -p com.carocean.bluetooth.music -v 10000000   说明：-p 后面跟要测试应用的包名  -v 测试的次数
+退出应用和拔掉数据线，都无法停止monkey测试，如需停止monkey测试，输入如下命令：
+adb shell 进入 控制平台
+ps | grep monkey
+返回来的数字，即是monkey的进程号
+kill 命令结束进程继续输入
+
+
+monkey -p com.carocean.radio --ignore-crashes  --ignore-timeouts --ignore-security-exceptions  --pct-trackball 0 --pct-nav 0 --pct-majornav 0 --pct-anyevent 0  --pct-syskeys 0 -v -v -v --throttle 500 1200000000 > /storage/udisk2/monkeysys.txt 2>&1 &
+
+monkey -p com.ckx.system.settings --ignore-crashes  --ignore-timeouts --ignore-security-exceptions  --pct-trackball 0 --pct-nav 0 --pct-majornav 0 --pct-anyevent 0  --pct-syskeys 0 -v -v -v --throttle 500 1200000000 > /mnt/sdcard/monkeysys.txt 2>&1 &
+
+monkey -p com.yecon.fmradio --throttle 50 --pct-touch 95 --pct-motion 0 -v-v-v 500000
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,28 @@
+1.D盘创建文件夹monkey，monkey根目录下建立backlist.txt（黑名单）
+然后再建立文件夹log
+
+2.adb push D:\monkey\blacklist.txt /mnt/sdcard/
+
+3.adb shell ps >D:\monkey\log\ps_before.txt
+
+4.adb shell
+
+5.monkey --pkg-blacklist-file /mnt/sdcard/blacklist.txt --ignore-crashes --ignore-timeouts --ignore-security-exceptions --pct-trackball 0 --pct-nav 0 --pct-majornav 0 --pct-anyevent 0 --pct-syskeys 0 -v -v -v --throttle 300 1200000000 > /mnt/sdcard/monkeysys.txt 2>&1 &
+
+6.结束命令：
+   1.Ctrl C 暂停monkey
+   2.adb shell
+   3.ps | grep monkey 
+   4.kill -9 进程号
+
+7.跑完之后导出
+adb pull /mnt/sdcard/monkeysys.txt D:\monkey\log
+adb pull /mnt/sdcard/kmsg.txt D:\monkey\log
+adb shell ps >D:\monkey\log\ps_after.txt
+adb shell ps|findstr "system_server" >D:\monkey\log\system_serverPID_after.txt
+adb pull /mnt/sdcard/aa.txt D:\monkey\log
+adb pull /data/anr/ D:\monkey\log
+adb shell cat /proc/last_kmsg >D:\monkey\log\last_kmsg.txt
+adb shell cat /proc/kmsg >D:\monkey\log\kmsg-1.txt
+
+U盘log：系统设置>系统>更多设置>开发者选项>save log勾选上，然后把U盘插上，系统就会把日志写到U盘里
