@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/text001"
+        android:layout_marginTop="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="22sp"
+        android:textColor="#ffffff"
+        android:text="点击我跳转注册界面"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center">
+
+        <ListView
+            android:id="@+id/listview01_fragment001"
+            android:layout_width="400dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:fadeScrollbars="false"
+            android:overScrollMode="never"
+            android:scrollbars="none" />
+
+        <ListView
+            android:id="@+id/listview02_fragment001"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginLeft="100dp"
+            android:layout_marginBottom="20dp"
+            android:fadeScrollbars="false"
+            android:overScrollMode="never"
+            android:scrollbars="none"
+            android:visibility="gone"/>
+    </LinearLayout>
+</LinearLayout>

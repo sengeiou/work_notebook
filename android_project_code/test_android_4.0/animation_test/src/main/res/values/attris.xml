@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="myAnimView">
+        <!--颜色-->
+        <attr name="color" format="color"/>
+        <!--半径-->
+        <attr name="radiusize" format="float"/>
+        <!-- 动画开始颜色 -->
+        <attr name="startColor" format="string"/>
+        <!-- 动画结束颜色 -->
+        <attr name="endColor" format="string"/>
+    </declare-styleable>
+</resources>
