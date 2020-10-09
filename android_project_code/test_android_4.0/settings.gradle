@@ -1,5 +1,0 @@
-rootProject.name='My_Application_test'
-include ':app'
-include ':animation_test'
-include ':string_matching_test'
-include ':filereadanwrite'
